@@ -1,17 +1,36 @@
 import User from "../models/User.js";
+import { v4 } from "uuid";
 
 class UserController {
   async store(request, response) {
-    const user = {
-      id: v4(),
-      name: "Matheus Gali",
-      email: "matheusinho@example.com",
-      password_hash: "31319494",
-      admin: false,
-    };
-    await User.create(user);
+    const { name, email, password_hash, admin } = request.body;
 
-    res.status(201).json(user);
+    const existingUser = User.findOne({
+      where: {
+        email,
+      },
+    });
+
+    if (existingUser) {
+      return response
+        .status(400)
+        .json({ error: "Este e-mail já está cadastrado!" });
+    }
+
+    const user = await User.create({
+      id: v4(),
+      name,
+      email,
+      password_hash,
+      admin,
+    });
+
+    return response.status(201).json({
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      admin: user.admin,
+    });
   }
 }
 
