@@ -2,10 +2,11 @@ import * as Yup from "yup";
 
 class ProductController {
   async store(request, response) {
+    console.log();
     const schema = Yup.object({
       name: Yup.string().required(),
       price: Yup.number().required(),
-      catgory: Yup.string().required(),
+      category: Yup.string().required(),
     });
 
     try {
@@ -19,7 +20,7 @@ class ProductController {
 
     console.log({ name, price, category, image });
 
-    return response.status(201).json({ message: "Product created!" });
+    return response.status(201).json({ ok: true });
   }
 }
 
