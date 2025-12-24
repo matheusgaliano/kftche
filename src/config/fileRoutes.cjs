@@ -3,6 +3,6 @@ const express = require("express");
 
 const uploadPath = resolve(__dirname, "..", "..", "uploads");
 
-const fileRoutesConfig = express.static(uploadPath);
+const fileRouteConfig = express.static(uploadPath);
 
-module.exports = fileRoutesConfig;
+module.exports = fileRouteConfig;
