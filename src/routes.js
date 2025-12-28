@@ -36,6 +36,12 @@ routes.post(
   upload.single("file"),
   CategoryController.store
 );
+routes.put(
+  "/categories",
+  adminMiddleware,
+  upload.single("file"),
+  CategoryController.update
+);
 
 routes.get("/categories", CategoryController.index);
 
