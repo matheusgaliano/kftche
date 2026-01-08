@@ -59,6 +59,8 @@ export const Title = styled.h2`
 
     span {
         color: #FF3131;
+        font-family: "Road Rage", sans-serif;
+
     
 }
 `
@@ -95,7 +97,5 @@ export const InputContainer = styled.div`
 
 `
 
-
-export const Button = styled.button``
 
 
