@@ -4,6 +4,7 @@ import * as yup from "yup"
 import { Container, Form, InputContainer, LeftContainer, RightContainer, Title } from "./styles";
 import Logo from "../../assets/logo-kftche1.svg"
 import { api } from '../../services/api'
+import { toast } from 'react-toastify'
 
 import { Button } from '../../components/Button'
 
@@ -25,10 +26,21 @@ export function Login() {
     resolver: yupResolver(schema),
   })
   const onSubmit = async (data) => {
-    const response = await api.post('/session', {
+    
+    const response = await toast.promise(
+      api.post('/session', {
       email: data.email,
       password: data.password,
-    });
+    }),
+    {
+      pending: 'Verificando seus dados.',
+      success: 'Seja bem-vindo(A).',
+      error: 'E-mail ou Senha.'
+    },
+    );
+    
+    
+    
     console.log(response)
   }
 
