@@ -1,4 +1,4 @@
-import { Button, Container, Form, InputContainer, LeftContainer, Link, RightContainer, Title } from "./styles";
+import { Button, Container, Form, InputContainer, LeftContainer, RightContainer, Title } from "./styles";
 import Logo from "../../assets/logo-kftche1.svg"
 
 export function Login() {
@@ -9,7 +9,9 @@ export function Login() {
       </LeftContainer>
       <RightContainer>
         <Title>
-          Olá, seja bem vindo ao <span>KFTchê</span>! Acesse com seu <span>Login e Senha</span>.
+          Olá, seja bem vindo ao <span>KFTchê!</span> 
+          <br />
+          Acesse com seu <span>Login e Senha.</span>
         </Title>
         <Form>
           <InputContainer>
@@ -22,10 +24,9 @@ export function Login() {
           <input type="password"/>
           </InputContainer>
 
-          <Link>Esqueci minha senha.</Link>
           <Button>Entrar</Button>
         </Form>
-        <Link>Não possui conta? Clique aqui!</Link>
+        <p>Não possui conta? <a>Clique aqui!</a></p>
       </RightContainer>
 
     </Container>
