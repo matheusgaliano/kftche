@@ -3,6 +3,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { Container, Form, InputContainer, LeftContainer, RightContainer, Title } from "./styles";
 import Logo from "../../assets/logo-kftche1.svg"
+import { api } from '../../services/api'
 
 import { Button } from '../../components/Button'
 
@@ -23,7 +24,13 @@ export function Login() {
   } = useForm({
     resolver: yupResolver(schema),
   })
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = async (data) => {
+    const response = await api.post('/session', {
+      email: data.email,
+      password: data.password,
+    });
+    console.log(response)
+  }
 
 
   return (
