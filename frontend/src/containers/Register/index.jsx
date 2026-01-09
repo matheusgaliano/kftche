@@ -29,23 +29,29 @@ export function Register() {
     resolver: yupResolver(schema),
   })
   const onSubmit = async (data) => {
-    
-    const response = await toast.promise(
+
+    try {const { status } = await
       api.post('/users', {
       name: data.name,
       email: data.email,
       password: data.password,
-    }),
-    {
-      pending: 'Verificando seus dados.',
-      success: 'Cadastro efetuado com sucesso.',
-      error: 'Bah! Algo deu errado! Tente novamente.'
-    },
-    );
+    },{
+      validateStatus: () => true,
+    });
+
+    if(status === 200 || status === 201){
+      toast.success('Conta criada com sucesso!')
+    } else if(status === 400){
+      toast.error('E-mail já existente. Faça login!')
+    } else{
+      throw new Error()
+    }
+          
+    } catch (error) {
+      toast.error('Barbaridade! Deu falha no sistema. Tente novamente!')
+    }
     
     
-    
-    console.log(response)
   }
 
 
