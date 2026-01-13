@@ -2,8 +2,8 @@ module.exports = {
   dialect: "postgres",
   host: "127.0.0.1",
   port: 5432,
-  username: "admin",
-  password: "123456",
+  username: "postgres",
+  password: "postgres",
   database: "kftche-api-db",
   define: {
     timestamps: true,
