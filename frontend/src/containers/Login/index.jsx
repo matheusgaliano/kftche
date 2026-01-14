@@ -28,13 +28,14 @@ export function Login() {
   } = useForm({
     resolver: yupResolver(schema),
   })
-  const onSubmit = async (data) => {
+  const onSubmit = async (clientData) => {
 
     try {
+      const { data } =
       await toast.promise(
         api.post('/sessions',{
-          email: data.email,
-          password: data.password,
+          email: clientData.email,
+          password: clientData.password,
         }),
         {
           pending: 'Verificando seus dados...',
@@ -42,6 +43,8 @@ export function Login() {
           error: 'E-mail ou Senha incorretos',
         }
       );
+      localStorage.setItem('token', data.token);
+
      setTimeout(() => {
             navigate('/')
           }, 2000); 
