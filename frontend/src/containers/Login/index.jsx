@@ -1,7 +1,15 @@
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
-import { Container, Form, InputContainer, LeftContainer, RightContainer, Title, Link, } from "./styles";
+import { 
+  Container, 
+  Form, 
+  InputContainer, 
+  LeftContainer, 
+  RightContainer, 
+  Title, 
+  Link, 
+} from "./styles";
 import Logo from "../../assets/logo-kftche1.svg"
 import { api } from '../../services/api'
 import { toast } from 'react-toastify'
