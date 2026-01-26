@@ -13,6 +13,8 @@ export const Container = styled.div`
     .react-multi-carousel-list {
         overflow: visible;
     }
+
+   
     padding-left: 40px;
     padding-bottom: 17px;
 `;
