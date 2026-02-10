@@ -4,6 +4,20 @@ export const Container = styled.div`
     .carousel-item{
         padding-right: 40px;
     }
+
+    .react-multiple-carousel__arrow--left {
+        top: 10px;
+        left: 10px;
+        right: auto;
+        
+    }
+
+    .react-multiple-carousel__arrow--right {
+        top: 10px;
+        right: 50px;
+        left: auto;
+    }
+
     padding-left: 40px;
 `;
 export const Title = styled.h2`
