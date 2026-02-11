@@ -9,8 +9,9 @@ export function Menu(){
                 HAMBURGUER
                 <br/>
                 ESTÁ AQUI!!!
-            </h1>
+            
             <span>Este cardápio é o melhor da região!</span>
+            </h1>
             </Banner>
             <CategoryMenu>
 
