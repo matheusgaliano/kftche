@@ -61,12 +61,13 @@ export const CategoryButton = styled(Link)`
     text-decoration: none;
     cursor: pointer;
     background: none;
-    color: #f60e0e;
+    color: ${props => props.$isActiveCategory ? '#f60e0e' : '#585858'};
     font-size: 25px;
     font-weight: 450;
     padding-bottom: 5px;
     line-height: 20px;
-    border-bottom: 4px solid #f60e0e;
+    border: none;
+    border-bottom: ${props => props.$isActiveCategory && '4px solid #f60e0e'} ;
 
 
 `
