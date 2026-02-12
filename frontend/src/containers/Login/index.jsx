@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
+import { useUser } from "../../hooks/UserContext";
 import { 
   Container, 
   Form, 
@@ -20,6 +21,7 @@ import { Button } from '../../components/Button'
 export function Login() {
 
   const navigate = useNavigate();
+  const { putUserData } = useUser();
 
   const schema = yup
   .object({
@@ -39,7 +41,7 @@ export function Login() {
   const onSubmit = async (clientData) => {
 
     try {
-      const { data } =
+      const { data: userData } =
       await toast.promise(
         api.post('/sessions',{
           email: clientData.email,
@@ -51,7 +53,8 @@ export function Login() {
           error: 'E-mail ou Senha incorretos',
         }
       );
-      localStorage.setItem('token', data.token);
+
+      putUserData(userData);
 
      setTimeout(() => {
             navigate('/')

@@ -2,7 +2,6 @@ import { CategoriesCarousel } from "../../components/CategoriesCarousel";
 import { Banner, Container } from "./styles";
 import { OffersCarousel } from "../../components/OffersCarousel";
 
-
 export function Home(){
     return (
         <main>
