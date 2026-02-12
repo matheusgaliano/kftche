@@ -83,3 +83,23 @@ export const ProductsContainer = styled.div`
 
 `
 
+export const ButtonHomeBack = styled.button`
+    position: fixed;
+  top: 20px;
+  left: 20px;
+
+  background: rgb(179, 8, 8);
+  border: none;
+  color: #fff;
+
+  padding: 10px 14px;
+  border-radius: 20px;
+
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 1000;
+
+  &:hover {
+    background: rgba(137, 1, 1, 0.8);
+  }
+`;
