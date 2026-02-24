@@ -1,5 +1,5 @@
 import Logo from '../../assets/logo-kftche2.svg';
-import { CartItems } from '../../components/CartItems';
+import { CartResume, CartItems } from '../../components';
 import { Banner, Container, Content, Title } from './styles'
 
 
@@ -12,7 +12,7 @@ export function Cart () {
             <Title>Checkout - Pedido</Title>
             <Content>
                 <CartItems />
-                {/* <CartResume /> */}
+                <CartResume />
             </Content>
         </Container>
     )
