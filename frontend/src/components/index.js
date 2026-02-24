@@ -1,6 +1,6 @@
 export * from './Button'
 export * from './CardProduct'
-export * from './CardButton'
+export * from './CartButton'
 export * from './CategoriesCarousel'
 export * from './Footer'
 export * from './Header'
