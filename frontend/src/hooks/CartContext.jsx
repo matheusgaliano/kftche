@@ -26,7 +26,8 @@ const putProductInCart = (product) => {
 }
 
 const clearCart = () => {
-
+    setCartProducts([]);
+    updateLocalStorage([]);
 }
 
 const deleteProductFromCart = (productId) => {
