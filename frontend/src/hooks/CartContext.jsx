@@ -58,7 +58,7 @@ const decreaseProductQuantity = (productId) => {
         setCartProducts(newCart);
         updateLocalStorage(newCart);
     } else {
-        deleteProduct(productId);
+        deleteProductFromCart(productId);
     }
 }
 
