@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { application, Router } from "express";
 import UserController from "./app/controllers/UserController.js";
 import SessionController from "./app/controllers/SessionController.js";
 import ProductController from "./app/controllers/ProductController.js";
@@ -8,6 +8,7 @@ import authMiddleware from "./app/middlewares/auth..js";
 import CategoryController from "./app/controllers/CategoryController.js";
 import adminMiddleware from "./app/middlewares/admin.js";
 import OrderController from "./app/controllers/OrderController.js";
+import CreatePaymentIntentController from "./app/controllers/stripe/CreatePaymentIntentController.js";
 
 const routes = new Router();
 
@@ -55,5 +56,7 @@ routes.put(
   upload.single("file"),
   OrderController.update
 );
+
+routes.post("/create-payment-intent", CreatePaymentIntentController.store);
 
 export default routes;
