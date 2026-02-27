@@ -36,7 +36,10 @@ async store(request, response) {
 
     const amount = calculateOrderAmount(request.body.products);
 
-    const paymentIntent = await stripe.paymentIntents.create({ amount, currency: 'eur', automatic_payment_methods: { enabled: true, }, });
+    const paymentIntent = await stripe.paymentIntents.create({ 
+        amount: 7080,
+        currency: 'brl', 
+        automatic_payment_methods: { enabled: true, }, });
 
     response.json({
         clientSecret: paymentIntent.client_secret,
