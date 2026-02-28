@@ -30,7 +30,7 @@ export const ButtonGroup = styled.div`
     }
 `;
 
-export const EmptyCart = styled.p`
+export const EmptyCart = styled.span`
     font-size: 20px;
     text-align: center;
     font-weight: bold;
