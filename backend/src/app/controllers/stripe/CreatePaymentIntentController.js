@@ -37,7 +37,7 @@ class CreatePaymentIntentController {
         const amount = calculateOrderAmount(products);
 
         const paymentIntent = await stripe.paymentIntents.create({
-            amount,
+            amount: amount,
             currency: "brl",
             automatic_payment_methods: {
                 enabled: true,
