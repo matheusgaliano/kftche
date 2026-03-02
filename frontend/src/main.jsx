@@ -2,23 +2,26 @@ import { Elements } from '@stripe/react-stripe-js'
 import React from "react";
 import ReactDOM from "react-dom/client";
 import GlobalStyles from "./styles/globalStyles";
-import { RouterProvider } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import { Router } from './routes';
 import { ToastContainer } from "react-toastify";
-import { router } from "./routes";
 import AppProvider from "./hooks";
 import stripePromise from './config/stripeConfig';
 import { standardTheme } from './styles/themes/standard'
+import { ThemeProvider } from 'styled-components';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <TeamProvider theme={standardTheme}>
+    <ThemeProvider theme={standardTheme}>
       <AppProvider>
         <Elements stripe={stripePromise}>
-          <RouterProvider router={router} />
+          <BrowserRouter>
+            <Router />
+          </BrowserRouter>
         </Elements>
         <GlobalStyles />
         <ToastContainer autoClose={2000} theme='dark' />
       </AppProvider>
-    </TeamProvider>
+    </ThemeProvider>
   </React.StrictMode>,
 );
